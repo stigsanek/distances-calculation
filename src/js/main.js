@@ -1,4 +1,5 @@
 import toRequest from './backend.js';
+import { initMap } from './map.js';
 import { btnCalculateElement, btnCopyElement, activatePage, disablePage, renderData } from './page';
 import initCopy from './util.js';
 
@@ -9,7 +10,8 @@ const Path = {
 
 // Обработчик загрузки данных по начальным точкам
 const onLocalityLoad = (response) => {
-  renderData(response, pointData);
+  const callback = renderData(response, pointData);
+  initMap(callback);
   activatePage();
 }
 

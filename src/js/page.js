@@ -1,3 +1,5 @@
+import { calculateDistance } from './map.js';
+
 const bodyElement = document.querySelector('.page-body');
 const overlayElement = bodyElement.querySelector('.overlay');
 const btnCalculateElement = bodyElement.querySelector('.page-header__btn--yellow');
@@ -15,7 +17,7 @@ const disablePage = () => {
   btnCopyElement.textContent = 'Copy to clipboard';
 }
 
-const tableElement = bodyElement.querySelector('.content__body');
+const tableBodyElement = bodyElement.querySelector('.content__body');
 const templateElement = bodyElement.querySelector('#table-content').content.querySelector('.element');
 const fragmentElement = document.createDocumentFragment();
 
@@ -42,13 +44,21 @@ const renderData = (loaclityData, pointData) => {
         newElement.querySelector('.element__target-loc-x').textContent = currentPoint.x;
         newElement.querySelector('.element__target-loc-y').textContent = currentPoint.y;
 
+        const className = `element-${currentLocality.id}-${i}-${j}`;
+        const distanceElement = newElement.querySelector('.element__distance');
+        distanceElement.classList.add(className);
+
+        const coordsStart = [currentLocality.y, currentLocality.x];
+        const coordsEnd = [currentPoint.y, currentPoint.x];
+
+        calculateDistance(coordsStart, coordsEnd, className);
         fragmentElement.append(newElement);
       }
     }
   }
 
-  tableElement.append(fragmentElement);
+  tableBodyElement.append(fragmentElement);
   bodyElement.classList.add('page-body--active');
 }
 
-export { btnCalculateElement, btnCopyElement, activatePage, disablePage, renderData };
+export { btnCalculateElement, btnCopyElement, tableBodyElement, activatePage, disablePage, renderData };
