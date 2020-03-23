@@ -21,6 +21,8 @@ const tableBodyElement = bodyElement.querySelector('.content__body');
 const templateElement = bodyElement.querySelector('#table-content').content.querySelector('.element');
 const fragmentElement = document.createDocumentFragment();
 
+const elementList = [];
+
 // Функция рендеринга данных
 const renderData = (loaclityData, pointData) => {
   for (let i = 0; i < loaclityData.length; i++) {
@@ -53,6 +55,7 @@ const renderData = (loaclityData, pointData) => {
 
         calculateDistance(coordsStart, coordsEnd, className);
         fragmentElement.append(newElement);
+        elementList.push(newElement);
       }
     }
   }
@@ -61,4 +64,11 @@ const renderData = (loaclityData, pointData) => {
   bodyElement.classList.add('page-body--active');
 }
 
-export { btnCalculateElement, btnCopyElement, tableBodyElement, activatePage, disablePage, renderData };
+// Функция удаления элементов
+const removeData = () => {
+  elementList.forEach((element) => {
+    element.remove();
+  });
+}
+
+export { btnCalculateElement, btnCopyElement, tableBodyElement, activatePage, disablePage, renderData, removeData };
