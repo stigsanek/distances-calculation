@@ -1,23 +1,32 @@
 import toRequest from './backend.js';
-import { btnElement, activatePage, disablePage, renderData } from './page';
+import { btnCalculateElement, btnCopyElement, activatePage, disablePage, renderData } from './page';
+import initCopy from './util.js';
 
-let pointData;
+const Path = {
+  LOCALITY: 'data/locality.json',
+  POINT: 'data/point.json'
+};
 
-// Функция получения данных по населенным пунктам, от которых будет производится расчет
-const getLocality = (response) => {
+// Обработчик загрузки данных по начальным точкам
+const onLocalityLoad = (response) => {
   renderData(response, pointData);
   activatePage();
 }
 
-// Функция получения точек, до которых будет производится расчет
-const getPoints = (response) => {
+let pointData;
+
+// Обрбаотчик загрузки данных по конечным точкам
+const onPointLoad = (response) => {
   pointData = response;
   activatePage();
 
-  btnElement.addEventListener('click', () => {
+  btnCalculateElement.addEventListener('click', () => {
     disablePage();
-    toRequest(getLocality, 'data/locality.json');
+    toRequest(onLocalityLoad, Path.LOCALITY);
   });
 }
 
-toRequest(getPoints, 'data/point.json');
+document.addEventListener('DOMContentLoaded', () => {
+  toRequest(onPointLoad, Path.POINT);
+  initCopy(btnCopyElement, document.querySelector('.content'));
+});

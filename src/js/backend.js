@@ -1,5 +1,6 @@
 const CODE_SUCCESS = 200;
 
+// Функция получения данных
 const toRequest = (onSuccess, path) => {
   const xhr = new XMLHttpRequest();
   xhr.responseType = 'json';

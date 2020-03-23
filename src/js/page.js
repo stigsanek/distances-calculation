@@ -1,17 +1,18 @@
 const bodyElement = document.querySelector('.page-body');
 const overlayElement = bodyElement.querySelector('.overlay');
-const btnElement = bodyElement.querySelector('.page-header__btn');
+const btnCalculateElement = bodyElement.querySelector('.page-header__btn--yellow');
+const btnCopyElement = document.querySelector('.page-header__btn--blue');
 
 // Функция активации страницы
 const activatePage = () => {
   overlayElement.classList.remove('overlay--show');
-  btnElement.classList.add('page-header__btn--show');
+  btnCalculateElement.classList.add('page-header__btn--show');
 }
 
 // Функция блокировки страницы
 const disablePage = () => {
   overlayElement.classList.add('overlay--show');
-  btnElement.classList.remove('page-header__btn--show');
+  btnCopyElement.textContent = 'Copy to clipboard';
 }
 
 const tableElement = bodyElement.querySelector('.content__body');
@@ -50,4 +51,4 @@ const renderData = (loaclityData, pointData) => {
   bodyElement.classList.add('page-body--active');
 }
 
-export { btnElement, activatePage, disablePage, renderData };
+export { btnCalculateElement, btnCopyElement, activatePage, disablePage, renderData };
