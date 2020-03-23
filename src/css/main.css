@@ -41,6 +41,7 @@ body {
 }
 
 .page-header__btn {
+  display: none;
   margin: 0;
   padding: 15px;
   background-color: #ffc107;
@@ -51,6 +52,10 @@ body {
   font-weight: bold;
   cursor: pointer;
   animation: move-scale 1s linear infinite;
+}
+
+.page-header__btn--show {
+  display: block;
 }
 
 .page-main {
