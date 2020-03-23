@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distance calculation</title>
+  <!--cc9d2649-e2ba-4711-b772-1c9367d9e5af-->
+  <!--bbfb21b0-fd33-4fe1-8fe9-aef541aaea1c-->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=bbfb21b0-fd33-4fe1-8fe9-aef541aaea1c"
+    type="text/javascript"></script>
+</head>
+
+<body class="page-body">
+  <header class="page-header">
+    <h1 class="page-header__title">Distances Calculate</h1>
+    <p class="page-header__promo">Distance calculation app by
+      <a href="https://tech.yandex.ru/maps%20/" target="_blank" rel="noreferrer">API Yandex Maps</a>
+    </p>
+    <button class="page-header__btn" type="button">Calculate me!</button>
+  </header>
+  <main class="page-main">
+    <table class="content">
+      <thead class="content__header">
+        <tr>
+          <th>Id</th>
+          <th>Locality</th>
+          <th>Longitude</th>
+          <th>Latitude</th>
+          <th>Settlement</th>
+          <th>District</th>
+          <th>District code</th>
+          <th>Nearest district center</th>
+          <th>Nearest district center code</th>
+          <th>Longitude</th>
+          <th>Latitude</th>
+          <th>Distance</th>
+        </tr>
+      </thead>
+      <tbody class="content__body"></tbody>
+    </table>
+  </main>
+  <footer class="page-footer">
+    <p class="page-footer__author">Created by Aleksandr Egorov</p>
+  </footer>
+  <div class="overlay">
+    <div class="overlay__spinner"></div>
+  </div>
+
+  <template id="table-content">
+    <tr class="element">
+      <td class="element__id"></td>
+      <td class="element__loclity"></td>
+      <td class="element__loc-x"></td>
+      <td class="element__loc-y"></td>
+      <td class="element__settlement"></td>
+      <td class="element__district"></td>
+      <td class="element__code"></td>
+      <td class="element__target-locality"></td>
+      <td class="element__target-code"></td>
+      <td class="element__target-loc-x"></td>
+      <td class="element__target-loc-y"></td>
+      <td class="element__distance"></td>
+    </tr>
+  </template>
+</body>
+
+</html>
