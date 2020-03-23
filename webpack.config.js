@@ -25,6 +25,10 @@ const applyPlugins = () => {
       {
         from: path.resolve(__dirname, 'src/data'),
         to: path.resolve(__dirname, 'dist/data')
+      },
+      {
+        from: path.resolve(__dirname, 'src/favicons'),
+        to: path.resolve(__dirname, 'dist/favicons')
       }
     ]),
     new HTMLWebpackPlugin({
