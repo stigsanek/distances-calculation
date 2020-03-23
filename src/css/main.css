@@ -7,15 +7,27 @@ body {
 
 .page-body {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
   background-color: #ffffff;
+}
+
+.page-body--active .page-main {
+  display: flex;
+}
+
+.page-body--active .page-footer {
+  display: block;
+}
+
+.page-body--active {
+  justify-content: flex-start;
 }
 
 .page-header {
@@ -34,7 +46,7 @@ body {
 
 .page-header__promo {
   margin: 0;
-  padding: 0;
+  padding: 0 15px;
   margin-bottom: 20px;
   color: #6c757d;
   text-align: center;
@@ -59,9 +71,11 @@ body {
 }
 
 .page-main {
-  display: flex;
+  display: none;
   flex-direction: column;
-  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  overflow: auto;
 }
 
 .content {
@@ -72,16 +86,18 @@ body {
 .content td {
   padding: 10px 20px;
   border-bottom: 1px solid #dee2e6;
+  text-align: center;
 }
 
 .page-footer {
+  display: none;
   margin-top: auto;
   padding: 15px;
 }
 
 .page-footer__author {
   margin: 0;
-  padding: 0;
+  padding: 0 15px;
   text-align: center;
   color: #cccccc;
 }
