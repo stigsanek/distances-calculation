@@ -14,7 +14,6 @@ const activatePage = () => {
 // Функция блокировки страницы
 const disablePage = () => {
   overlayElement.classList.add('overlay--show');
-  btnCopyElement.textContent = 'Copy to clipboard';
 }
 
 const tableBodyElement = bodyElement.querySelector('.content__body');
