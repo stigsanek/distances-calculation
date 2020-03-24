@@ -1,6 +1,6 @@
 import toRequest from './backend.js';
 import { initMap } from './map.js';
-import { btnCalculateElement, btnCopyElement, activatePage, disablePage, changeBtnStyle, renderData } from './page';
+import { btnCalculateElement, btnCopyElement, activatePage, disablePage, changeBtnStyle, renderData } from './page.js';
 import initCopy from './util.js';
 
 const Path = {
