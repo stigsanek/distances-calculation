@@ -3,7 +3,6 @@ import { calculateDistance } from './map.js';
 const bodyElement = document.querySelector('.page-body');
 const overlayElement = bodyElement.querySelector('.overlay');
 const btnCalculateElement = bodyElement.querySelector('.page-header__btn--yellow');
-const btnCopyElement = document.querySelector('.page-header__btn--blue');
 
 // Функция активации страницы
 const activatePage = () => {
@@ -70,4 +69,4 @@ const removeData = () => {
   });
 }
 
-export { btnCalculateElement, btnCopyElement, tableBodyElement, activatePage, disablePage, renderData, removeData };
+export { btnCalculateElement, tableBodyElement, activatePage, disablePage, renderData, removeData };
