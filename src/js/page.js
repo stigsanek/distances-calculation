@@ -2,13 +2,11 @@ import { calculateDistance } from './map.js';
 
 const bodyElement = document.querySelector('.page-body');
 const overlayElement = bodyElement.querySelector('.overlay');
-const btnCalculateElement = bodyElement.querySelector('.page-header__btn--yellow');
 const btnCopyElement = bodyElement.querySelector('.page-header__btn--blue');
 
 // Функция активации страницы
 const activatePage = () => {
   overlayElement.classList.remove('overlay--show');
-  btnCalculateElement.classList.add('page-header__btn--show');
 }
 
 // Функция блокировки страницы
@@ -65,6 +63,7 @@ const renderData = (loaclityData, pointData) => {
 
   tableBodyElement.append(fragmentElement);
   bodyElement.classList.add('page-body--active');
+  activatePage();
 }
 
-export { btnCalculateElement, btnCopyElement, tableBodyElement, activatePage, disablePage, changeBtnStyle, renderData };
+export { btnCopyElement, tableBodyElement, activatePage, disablePage, changeBtnStyle, renderData };

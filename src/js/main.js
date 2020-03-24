@@ -1,6 +1,6 @@
 import toRequest from './backend.js';
 import { initMap } from './map.js';
-import { btnCalculateElement, btnCopyElement, activatePage, disablePage, changeBtnStyle, renderData } from './page.js';
+import { btnCopyElement, activatePage, disablePage, changeBtnStyle, renderData } from './page.js';
 import initCopy from './util.js';
 
 const Path = {
@@ -21,7 +21,7 @@ const onPointLoad = (response) => {
   pointData = response;
   activatePage();
 
-  btnCalculateElement.addEventListener('click', () => {
+  document.querySelector('.page-header__btn--yellow').addEventListener('click', () => {
     disablePage();
     toRequest(onLocalityLoad, Path.LOCALITY);
   });

@@ -31,8 +31,7 @@ a {
   animation: none;
 }
 
-.page-body--active .page-header__btn--yellow,
-.page-body--active .overlay {
+.page-body--active .page-header__btn--yellow {
   display: none;
 }
 
