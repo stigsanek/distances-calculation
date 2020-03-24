@@ -41,7 +41,8 @@ a {
 }
 
 .page-body--active .page-footer,
-.page-body--active .page-header__btn--blue {
+.page-body--active .page-header__btn--blue,
+.page-body--active .page-header__btn--green {
   display: block;
 }
 
@@ -92,9 +93,24 @@ a {
   background-color: #ffc107;
 }
 
+.page-header__btn--yellow:focus,
+.page-header__btn--yellow:hover {
+  background-color: #e0a800;
+}
+
 .page-header__btn--blue {
   color: #ffffff;
   background-color: #007bff;
+}
+
+.page-header__btn--blue:focus,
+.page-header__btn--blue:hover {
+  background-color: #0069d9;
+}
+
+.page-header__btn--green {
+  color: #ffffff;
+  background-color: #28a745;
 }
 
 .page-header__btn--show {

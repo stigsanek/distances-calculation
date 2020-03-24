@@ -1,6 +1,6 @@
 import toRequest from './backend.js';
 import { initMap } from './map.js';
-import { btnCalculateElement, activatePage, disablePage, renderData, removeData } from './page';
+import { btnCalculateElement, btnCopyElement, activatePage, disablePage, changeBackground, renderData } from './page';
 import initCopy from './util.js';
 
 const Path = {
@@ -23,7 +23,6 @@ const onPointLoad = (response) => {
 
   btnCalculateElement.addEventListener('click', () => {
     disablePage();
-    removeData();
     toRequest(onLocalityLoad, Path.LOCALITY);
   });
 }
@@ -31,5 +30,5 @@ const onPointLoad = (response) => {
 window.addEventListener('load', () => {
   const callback = toRequest(onPointLoad, Path.POINT);
   initMap(callback);
-  initCopy(document.querySelector('.page-header__btn--blue'), document.querySelector('.content'));
+  initCopy(btnCopyElement, document.querySelector('.content'), changeBackground);
 });

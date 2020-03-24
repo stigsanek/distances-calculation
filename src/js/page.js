@@ -3,6 +3,7 @@ import { calculateDistance } from './map.js';
 const bodyElement = document.querySelector('.page-body');
 const overlayElement = bodyElement.querySelector('.overlay');
 const btnCalculateElement = bodyElement.querySelector('.page-header__btn--yellow');
+const btnCopyElement = bodyElement.querySelector('.page-header__btn--blue');
 
 // Функция активации страницы
 const activatePage = () => {
@@ -15,11 +16,15 @@ const disablePage = () => {
   overlayElement.classList.add('overlay--show');
 }
 
+const changeBackground = () => {
+  btnCopyElement.classList.remove('page-header__btn--blue');
+  btnCopyElement.classList.add('page-header__btn--green');
+  btnCopyElement.textContent = 'Copied to clipboard';
+}
+
 const tableBodyElement = bodyElement.querySelector('.content__body');
 const templateElement = bodyElement.querySelector('#table-content').content.querySelector('.element');
 const fragmentElement = document.createDocumentFragment();
-
-const elementList = [];
 
 // Функция рендеринга данных
 const renderData = (loaclityData, pointData) => {
@@ -53,7 +58,6 @@ const renderData = (loaclityData, pointData) => {
 
         calculateDistance(coordsStart, coordsEnd, className);
         fragmentElement.append(newElement);
-        elementList.push(newElement);
       }
     }
   }
@@ -62,11 +66,4 @@ const renderData = (loaclityData, pointData) => {
   bodyElement.classList.add('page-body--active');
 }
 
-// Функция удаления элементов
-const removeData = () => {
-  elementList.forEach((element) => {
-    element.remove();
-  });
-}
-
-export { btnCalculateElement, tableBodyElement, activatePage, disablePage, renderData, removeData };
+export { btnCalculateElement, btnCopyElement, tableBodyElement, activatePage, disablePage, changeBackground, renderData };
