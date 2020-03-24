@@ -35,6 +35,10 @@ a {
   animation: none;
 }
 
+.page-body--active .page-header__btn--yellow {
+  display: none;
+}
+
 .page-body--active .page-footer,
 .page-body--active .page-header__btn--blue {
   display: block;
@@ -88,7 +92,6 @@ a {
 }
 
 .page-header__btn--blue {
-  margin-left: 30px;
   color: #ffffff;
   background-color: #007bff;
 }
