@@ -8,16 +8,15 @@ const Path = {
   POINT: 'data/point.json'
 };
 
-// Обработчик загрузки данных по начальным точкам
+// Обработчик загрузки данных начальных точек
 const onLocalityLoad = (response) => {
   const callback = renderData(response, pointData);
   initMap(callback);
-  activatePage();
 }
 
 let pointData;
 
-// Обрбаотчик загрузки данных по конечным точкам
+// Обрбаотчик загрузки данных конечных точек
 const onPointLoad = (response) => {
   pointData = response;
   activatePage();
@@ -30,6 +29,7 @@ const onPointLoad = (response) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  toRequest(onPointLoad, Path.POINT);
+  const callback = toRequest(onPointLoad, Path.POINT);
+  initMap(callback);
   initCopy(btnCopyElement, document.querySelector('.content'));
 });
