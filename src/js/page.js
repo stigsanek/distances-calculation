@@ -16,7 +16,8 @@ const disablePage = () => {
   overlayElement.classList.add('overlay--show');
 }
 
-const changeBackground = () => {
+// Функция изменения стилей кнопки копирования
+const changeBtnStyle = () => {
   btnCopyElement.classList.remove('page-header__btn--blue');
   btnCopyElement.classList.add('page-header__btn--green');
   btnCopyElement.textContent = 'Copied to clipboard';
@@ -66,4 +67,4 @@ const renderData = (loaclityData, pointData) => {
   bodyElement.classList.add('page-body--active');
 }
 
-export { btnCalculateElement, btnCopyElement, tableBodyElement, activatePage, disablePage, changeBackground, renderData };
+export { btnCalculateElement, btnCopyElement, tableBodyElement, activatePage, disablePage, changeBtnStyle, renderData };

@@ -1,6 +1,6 @@
 import toRequest from './backend.js';
 import { initMap } from './map.js';
-import { btnCalculateElement, btnCopyElement, activatePage, disablePage, changeBackground, renderData } from './page';
+import { btnCalculateElement, btnCopyElement, activatePage, disablePage, changeBtnStyle, renderData } from './page';
 import initCopy from './util.js';
 
 const Path = {
@@ -30,5 +30,5 @@ const onPointLoad = (response) => {
 window.addEventListener('load', () => {
   const callback = toRequest(onPointLoad, Path.POINT);
   initMap(callback);
-  initCopy(btnCopyElement, document.querySelector('.content'), changeBackground);
+  initCopy(btnCopyElement, document.querySelector('.content'), changeBtnStyle);
 });
