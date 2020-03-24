@@ -133,7 +133,8 @@ a {
   color: #cccccc;
 }
 
-.overlay {
+.overlay,
+.modal {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -156,8 +157,20 @@ a {
   animation: move-rotate 1s linear infinite;
 }
 
-.overlay--show {
+.overlay--show,
+.modal__show {
   display: flex;
+}
+
+.modal__text {
+  margin: 0;
+  padding: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
 @keyframes move-scale {
