@@ -28,7 +28,7 @@ const onPointLoad = (response) => {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   const callback = toRequest(onPointLoad, Path.POINT);
   initMap(callback);
   initCopy(document.querySelector('.page-header__btn--blue'), document.querySelector('.content'));
