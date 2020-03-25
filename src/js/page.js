@@ -62,7 +62,7 @@ const renderData = (loaclityData, pointData) => {
         const coordsStart = [currentLocality.y, currentLocality.x];
         const coordsEnd = [currentPoint.y, currentPoint.x];
 
-        calculateDistance(coordsStart, coordsEnd, className);
+        calculateDistance(coordsStart, coordsEnd, tableBodyElement, className);
         fragmentElement.append(newElement);
       }
     }
@@ -73,4 +73,4 @@ const renderData = (loaclityData, pointData) => {
   activatePage();
 }
 
-export { btnCopyElement, tableBodyElement, activatePage, disablePage, changeBtnStyle, renderError, renderData };
+export { activatePage, disablePage, changeBtnStyle, renderError, renderData };

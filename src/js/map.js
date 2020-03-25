@@ -1,7 +1,5 @@
-import { tableBodyElement } from './page.js';
-
 // Функция расчета расстояния
-const calculateDistance = (coordsStart, coordsdEnd, className) => {
+const calculateDistance = (coordsStart, coordsdEnd, element, className) => {
   const multiRoute = new ymaps.multiRouter.MultiRoute({
     referencePoints: [
       coordsStart,
@@ -13,7 +11,7 @@ const calculateDistance = (coordsStart, coordsdEnd, className) => {
 
   multiRoute.model.events.add('requestsuccess', () => {
     const activeRoute = multiRoute.getActiveRoute();
-    tableBodyElement.querySelector(`.${className}`).textContent = activeRoute.properties.get('distance').text;
+    element.querySelector(`.${className}`).textContent = activeRoute.properties.get('distance').text;
   });
 }
 
