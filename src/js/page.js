@@ -2,6 +2,7 @@ import { calculateDistance } from './map.js';
 
 const bodyElement = document.querySelector('.page-body');
 const overlayElement = bodyElement.querySelector('.overlay');
+const modalElement = bodyElement.querySelector('.modal');
 const btnCopyElement = bodyElement.querySelector('.page-header__btn--blue');
 
 // Функция активации страницы
@@ -19,6 +20,12 @@ const changeBtnStyle = () => {
   btnCopyElement.classList.remove('page-header__btn--blue');
   btnCopyElement.classList.add('page-header__btn--green');
   btnCopyElement.textContent = 'Copied to clipboard';
+}
+
+// Функция рендеринга ошибки
+const renderError = (message) => {
+  modalElement.querySelector('.modal__text').textContent = `API loading error! ${message}`;
+  modalElement.classList.add('modal__show');
 }
 
 const tableBodyElement = bodyElement.querySelector('.content__body');
@@ -66,4 +73,4 @@ const renderData = (loaclityData, pointData) => {
   activatePage();
 }
 
-export { btnCopyElement, tableBodyElement, activatePage, disablePage, changeBtnStyle, renderData };
+export { btnCopyElement, tableBodyElement, activatePage, disablePage, changeBtnStyle, renderError, renderData };

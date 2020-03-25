@@ -18,8 +18,12 @@ const calculateDistance = (coordsStart, coordsdEnd, className) => {
 }
 
 // Функция инициализации карты
-const initMap = (callback) => {
-  ymaps.ready(callback);
+const initMap = (callbackSucces, callbackError) => {
+  try {
+    ymaps.ready(callbackSucces);
+  } catch (error) {
+    callbackError(error);
+  }
 }
 
 export { calculateDistance, initMap };

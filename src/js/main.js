@@ -1,6 +1,6 @@
 import toRequest from './backend.js';
 import { initMap } from './map.js';
-import { btnCopyElement, activatePage, disablePage, changeBtnStyle, renderData } from './page.js';
+import { btnCopyElement, activatePage, disablePage, changeBtnStyle, renderError, renderData } from './page.js';
 import initCopy from './util.js';
 
 const Path = {
@@ -11,7 +11,7 @@ const Path = {
 // Обработчик загрузки данных начальных точек
 const onLocalityLoad = (response) => {
   const callback = renderData(response, pointData);
-  initMap(callback);
+  initMap(callback, renderError);
 }
 
 let pointData;
@@ -29,6 +29,6 @@ const onPointLoad = (response) => {
 
 window.addEventListener('load', () => {
   const callback = toRequest(onPointLoad, Path.POINT);
-  initMap(callback);
+  initMap(callback, renderError);
   initCopy(btnCopyElement, document.querySelector('.content'), changeBtnStyle);
 });
