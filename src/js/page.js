@@ -30,7 +30,6 @@ const renderError = (message) => {
 
 const tableBodyElement = bodyElement.querySelector('.content__body');
 const templateElement = bodyElement.querySelector('#table-content').content.querySelector('.element');
-const fragmentElement = document.createDocumentFragment();
 
 // Функция рендеринга данных
 const renderData = (loaclityData, pointData) => {
@@ -55,20 +54,14 @@ const renderData = (loaclityData, pointData) => {
         newElement.querySelector('.element__target-loc-x').textContent = currentPoint.x;
         newElement.querySelector('.element__target-loc-y').textContent = currentPoint.y;
 
-        const className = `element-${currentLocality.id}-${i}-${j}`;
-        const distanceElement = newElement.querySelector('.element__distance');
-        distanceElement.classList.add(className);
-
         const coordsStart = [currentLocality.y, currentLocality.x];
         const coordsEnd = [currentPoint.y, currentPoint.x];
 
-        calculateDistance(coordsStart, coordsEnd, tableBodyElement, className);
-        fragmentElement.append(newElement);
+        calculateDistance(coordsStart, coordsEnd, tableBodyElement, newElement);
       }
     }
   }
 
-  tableBodyElement.append(fragmentElement);
   bodyElement.classList.add('page-body--active');
   activatePage();
 }
