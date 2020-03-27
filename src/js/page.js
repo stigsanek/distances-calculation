@@ -61,9 +61,6 @@ const renderData = (loaclityData, pointData) => {
       }
     }
   }
-
-  bodyElement.classList.add('page-body--active');
-  activatePage();
 }
 
 export { activatePage, disablePage, changeBtnStyle, renderError, renderData };
