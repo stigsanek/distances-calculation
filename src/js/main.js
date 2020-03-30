@@ -10,6 +10,12 @@ const Path = {
   POINT: 'data/point.json'
 };
 
+// Функция отображения данных
+const showData = () => {
+  document.querySelector('body').classList.add('page-body--active');
+  activatePage();
+}
+
 // Функция запуска расчетов
 const runCalculate = (data) => {
   const callback = renderData(data, pointData);
@@ -38,9 +44,7 @@ const onLocalityLoad = (response) => {
     // Функция отмены таймера
     const cancelInterval = () => {
       clearInterval(timerId);
-
-      document.querySelector('body').classList.add('page-body--active');
-      activatePage();
+      showData();
     }
 
     // Таймер интервальных запросов
@@ -56,9 +60,7 @@ const onLocalityLoad = (response) => {
     }, TIME);
   } else {
     runCalculate(sourceData);
-
-    document.querySelector('body').classList.add('page-body--active');
-    activatePage();
+    showData();
   }
 }
 
