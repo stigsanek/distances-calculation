@@ -1,6 +1,6 @@
 import toRequest from './backend.js';
 import { initMap } from './map.js';
-import { activatePage, disablePage, changeBtnStyle, renderError, renderData } from './page.js';
+import { activatePage, disablePage, showData, changeBtnStyle, renderError, renderData } from './page.js';
 import initCopy from './util.js';
 
 const LIMIT = 100; // Лимит последовательных запросов к API
@@ -9,12 +9,6 @@ const Path = {
   LOCALITY: 'data/locality.json',
   POINT: 'data/point.json'
 };
-
-// Функция отображения данных
-const showData = () => {
-  document.querySelector('body').classList.add('page-body--active');
-  activatePage();
-}
 
 // Функция запуска расчетов
 const runCalculate = (data) => {

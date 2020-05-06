@@ -15,6 +15,12 @@ const disablePage = () => {
   overlayElement.classList.add('overlay--show');
 }
 
+// Функция отображения данных после завершения расчетов
+const showData = () => {
+  document.querySelector('body').classList.add('page-body--active');
+  activatePage();
+}
+
 // Функция изменения стилей кнопки копирования
 const changeBtnStyle = () => {
   btnCopyElement.classList.remove('page-header__btn--blue');
@@ -54,13 +60,15 @@ const renderData = (loaclityData, pointData) => {
         newElement.querySelector('.element__target-loc-x').textContent = currentPoint.x;
         newElement.querySelector('.element__target-loc-y').textContent = currentPoint.y;
 
-        const coordsStart = [currentLocality.y, currentLocality.x];
-        const coordsEnd = [currentPoint.y, currentPoint.x];
+        const coords = {
+          start: [currentLocality.y, currentLocality.x],
+          end: [currentPoint.y, currentPoint.x]
+        };
 
-        calculateDistance(coordsStart, coordsEnd, tableBodyElement, newElement);
+        calculateDistance(coords, tableBodyElement, newElement);
       }
     }
   }
 }
 
-export { activatePage, disablePage, changeBtnStyle, renderError, renderData };
+export { activatePage, disablePage, showData, changeBtnStyle, renderError, renderData };

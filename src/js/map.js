@@ -1,9 +1,9 @@
 // Функция расчета расстояния
-const calculateDistance = (coordsStart, coordsdEnd, parentElement, element) => {
+const calculateDistance = (coords, parentElement, element) => {
   const multiRoute = new ymaps.multiRouter.MultiRoute({
     referencePoints: [
-      coordsStart,
-      coordsdEnd
+      coords.start,
+      coords.end
     ]
   }, {
     boundsAutoApply: true
