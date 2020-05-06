@@ -38,7 +38,8 @@ a {
 .page-body--active .page-main,
 .page-body--active .page-footer,
 .page-body--active .page-header__btn--blue,
-.page-body--active .page-header__btn--green {
+.page-body--active .page-header__btn--green,
+.page-body--active .page-header__btn--red {
   display: block;
 }
 
@@ -66,6 +67,7 @@ a {
 
 .page-header__controls {
   display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -107,6 +109,26 @@ a {
 .page-header__btn--green {
   color: #ffffff;
   background-color: #28a745;
+}
+
+.page-header__btn--green:focus,
+.page-header__btn--green:hover {
+  background-color: #218838;
+}
+
+.page-header__btn--blue,
+.page-header__btn--green {
+  margin-right: 30px;
+}
+
+.page-header__btn--red {
+  color: #ffffff;
+  background-color: #dc3545;
+}
+
+.page-header__btn--red:focus,
+.page-header__btn--red:hover {
+  background-color: #c82333;
 }
 
 .page-header__btn--show {

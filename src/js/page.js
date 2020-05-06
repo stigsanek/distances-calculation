@@ -4,6 +4,7 @@ const bodyElement = document.querySelector('.page-body');
 const overlayElement = bodyElement.querySelector('.overlay');
 const modalElement = bodyElement.querySelector('.modal');
 const btnCopyElement = bodyElement.querySelector('.page-header__btn--blue');
+const btnReloadElement = bodyElement.querySelector('.page-header__btn--red');
 
 // Функция активации страницы
 const activatePage = () => {
@@ -18,6 +19,9 @@ const disablePage = () => {
 // Функция отображения данных после завершения расчетов
 const showData = () => {
   document.querySelector('body').classList.add('page-body--active');
+  btnReloadElement.addEventListener('click', () => {
+    location.reload();
+  })
   activatePage();
 }
 
