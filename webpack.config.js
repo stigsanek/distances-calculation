@@ -26,13 +26,15 @@ const createName = (ext) => {
 const applyPlugins = () => {
   return [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      {
+    new CopyWebpackPlugin({
+      patterns: [{
         from: path.resolve(__dirname, `${Path.FROM}/**/*`),
         to: path.resolve(__dirname, `${Path.TO}`),
-        ignore: ['*.css', '*.js']
-      }
-    ]),
+        globOptions: {
+          ignore: ['**/*.css', '**/*.js']
+        }
+      }]
+    }),
     new HTMLWebpackPlugin({
       template: './index.html',
       minify: {
