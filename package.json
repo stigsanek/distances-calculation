@@ -17,7 +17,7 @@
     "url": "git+https://github.com/stigsanek/distances-calculation.git"
   },
   "author": "stigsanek",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/stigsanek/distances-calculation/issues"
   },
