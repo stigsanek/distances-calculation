@@ -11,6 +11,6 @@ const initCopy = (evtElement, contentElement, callback) => {
 
     window.getSelection().removeAllRanges();
   });
-}
+};
 
 export default initCopy;

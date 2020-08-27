@@ -13,6 +13,6 @@ const toRequest = (onSuccess, path) => {
 
   xhr.open('GET', path);
   xhr.send();
-}
+};
 
 export default toRequest;

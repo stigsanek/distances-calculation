@@ -14,7 +14,7 @@ const calculateDistance = (coords, parentElement, element) => {
     element.querySelector('.element__distance').textContent = activeRoute.properties.get('distance').text;
     parentElement.append(element);
   });
-}
+};
 
 // Функция инициализации карты
 const initMap = (callbackSucces, callbackError) => {
@@ -23,6 +23,6 @@ const initMap = (callbackSucces, callbackError) => {
   } catch (error) {
     callbackError(error);
   }
-}
+};
 
 export { calculateDistance, initMap };

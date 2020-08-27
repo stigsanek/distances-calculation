@@ -9,12 +9,12 @@ const btnReloadElement = bodyElement.querySelector('.page-header__btn--red');
 // Функция активации страницы
 const activatePage = () => {
   overlayElement.classList.remove('overlay--show');
-}
+};
 
 // Функция блокировки страницы
 const disablePage = () => {
   overlayElement.classList.add('overlay--show');
-}
+};
 
 // Функция отображения данных после завершения расчетов
 const showData = () => {
@@ -23,20 +23,20 @@ const showData = () => {
     location.reload();
   })
   activatePage();
-}
+};
 
 // Функция изменения стилей кнопки копирования
 const changeBtnStyle = () => {
   btnCopyElement.classList.remove('page-header__btn--blue');
   btnCopyElement.classList.add('page-header__btn--green');
   btnCopyElement.textContent = 'Copied to clipboard';
-}
+};
 
 // Функция рендеринга ошибки
 const renderError = (message) => {
   modalElement.querySelector('.modal__text').textContent = `API loading error! ${message}`;
   modalElement.classList.add('modal__show');
-}
+};
 
 const tableBodyElement = bodyElement.querySelector('.content__body');
 const templateElement = bodyElement.querySelector('#table-content').content.querySelector('.element');
@@ -73,6 +73,6 @@ const renderData = (loaclityData, pointData) => {
       }
     }
   }
-}
+};
 
 export { activatePage, disablePage, showData, changeBtnStyle, renderError, renderData };

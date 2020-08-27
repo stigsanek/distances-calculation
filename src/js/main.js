@@ -14,7 +14,7 @@ const Path = {
 const runCalculate = (data) => {
   const callback = renderData(data, pointData);
   initMap(callback, renderError);
-}
+};
 
 let start = 0;
 let end = LIMIT;
@@ -24,7 +24,7 @@ const runIntervalCalculate = (data) => {
   runCalculate(data);
   start += LIMIT;
   end += LIMIT;
-}
+};
 
 // Обработчик загрузки данных начальных точек
 const onLocalityLoad = (response) => {
@@ -56,7 +56,7 @@ const onLocalityLoad = (response) => {
     runCalculate(sourceData);
     showData();
   }
-}
+};
 
 let pointData;
 
@@ -69,7 +69,7 @@ const onPointLoad = (response) => {
     disablePage();
     toRequest(onLocalityLoad, Path.LOCALITY);
   });
-}
+};
 
 window.addEventListener('load', () => {
   const callback = toRequest(onPointLoad, Path.POINT);
