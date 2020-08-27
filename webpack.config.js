@@ -53,10 +53,6 @@ const runScriptLoader = () => {
     loader: 'babel-loader'
   }];
 
-  if (isDev) {
-    loaders.push('eslint-loader');
-  }
-
   return loaders;
 }
 
