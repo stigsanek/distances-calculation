@@ -28,7 +28,7 @@ const applyPlugins = () => {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [{
-        from: path.resolve(__dirname, `${Path.FROM}/**/*`),
+        from: path.resolve(__dirname, `${Path.FROM}`),
         to: path.resolve(__dirname, `${Path.TO}`),
         globOptions: {
           ignore: ['**/*.css', '**/*.js']
